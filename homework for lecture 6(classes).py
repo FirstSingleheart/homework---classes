@@ -122,7 +122,7 @@ def avg_grade_all_students(students_list, course_name):
     students_count = 0
     for student in students_list:
         if isinstance(student, Student) and course_name in student.courses_in_progress:
-            all_students_avg_grade += student.grades[course_name]
+            all_students_avg_grade += student.avg_grade()
             students_count += 1
     if students_count == 0:
         return 'Ошибка'
@@ -134,7 +134,7 @@ def avg_grade_all_lecturers(lecturers_list, course_name):
     lecturers_count = 0
     for lecturer in lecturers_list:
         if isinstance(lecturer, Lecturer) and course_name in lecturer.courses_attached:
-            all_lecturers_avg_grade += lecturer.grades[course_name]
+            all_lecturers_avg_grade += lecturer.avg_grade()
             lecturers_count += 1
     if lecturers_count == 0:
         return 'Ошибка'
@@ -179,11 +179,11 @@ reviewer2.rate_students(student2, 'Java', 5)
 reviewer2.rate_students(student2, 'Java', 5)
 reviewer2.rate_students(student2, 'Java', 5)
 reviewer2.rate_students(student2, 'Python', 4)
-reviewer2.rate_students(student2, 'Python', 5)
+reviewer2.rate_students(student2, 'Python', 4)
 reviewer2.rate_students(student2, 'Python', 3)
 
 student1.rate_lecturer(lecturer1, "Python", 5)
-student1.rate_lecturer(lecturer1, "Python", 5)
+student1.rate_lecturer(lecturer1, "Python", 4)
 student1.rate_lecturer(lecturer1, "Python", 5)
 
 student2.rate_lecturer(lecturer2, "Python", 4)

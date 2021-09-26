@@ -129,8 +129,23 @@ student_list = [student1, student2]
 lecturer_list = [lecturer1, lecturer2]
 
 
-def student_all_average_grade(students, cours):
+def student_all_average_grade(students, cours_name):
     time_list = []
     for student in student_list:
-        time_list.append(student.grades.values())
-        
+        if cours not in lecturer.grades:
+            return "Указанный курс не найден"
+        else:
+            time_list.append(lecturer.grades[cours])
+    average_rage = sum(time_list) / len(time_list)
+    return average_rage
+
+
+def lecturer_all_average_grade(lecturer, cours_name):
+    time_list = []
+    for lecturer in lecturer_list:
+        if cours not in student.grades:
+            return "Указанный курс не найден"
+        else:
+            time_list.append(student.grades[cours])
+    average_rage = sum(time_list) / len(time_list)
+    return average_rage
